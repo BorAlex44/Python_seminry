@@ -2,7 +2,7 @@ import random
 
 
 def create_file(new_str):
-    with open('seminar4.txt', 'a') as data:
+    with open('seminar4_5.txt', 'a') as data:
         data.write(f'{new_str}\n')
 
 

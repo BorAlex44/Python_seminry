@@ -18,8 +18,8 @@ def compress(my_str):
 
 
 def decompress(file_name):
-    with open(file_name, "r") as file:
-        if path.exists(file_name):
+    if path.exists(file_name):
+        with open(file_name, "r") as file:
             data = file.read()
             print(f"Compressed data from a file {data}")
             decoded_str = ''
@@ -33,9 +33,9 @@ def decompress(file_name):
                     else:
                         decoded_str += int(count)*char
                         count = ''
-        else:
-            print(f"No such file was found")
-    return decoded_str
+        return decoded_str
+    else:
+        return print(f"No such file was found")
 
 
 new_list = list(input("Enter the string to compress: "))
@@ -44,5 +44,5 @@ compress_data = compress(new_list)
 create_file_compress(compress_data)
 print(f'Decompress data {"".join(new_list)}')
 print(f"Compress data {compress_data}")
-decoded_string = decompress('compress.txt')
+decoded_string = decompress(input("Input file name: "))
 print(decoded_string)
